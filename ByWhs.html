@@ -17,11 +17,24 @@
 </head>
 <body>
   <audio id="bgMusic"   autoplay="autoplay" loop="loop">
-  <source src="http://m701.music.126.net
-  /20231204124914/e9ab77d4ba573d6a37a8e16277d99489/
-  jdymusic/obj/wo3DlMOGwrbDjj7DisKw/14096450280/3978/65e4/
-  d6db/68b1b6aadb56d124f852ccd8c0b64350.mp3">
+  <source src="https://music.163.com/song/media/outer/url?id=479598964.mp3">
 </audio>
+<script type="text/javascript">
+  window.onload=function () {
+    let oA=document.querySelector("#bgMusic");
+    let timer=null;
+    function autoPlay() {
+      if (oA.paused) {
+        oA.paused=false;
+        oA.volume=0.5;
+        oA.play();
+      }else {
+        clearInterval(timer);
+      }
+    }
+    timer=setInterval(autoPlay,1);
+  }
+</script>
 <canvas
         id="canvas"
         style="position: absolute; width: 100%; height: 100%; z-index: 8888"
